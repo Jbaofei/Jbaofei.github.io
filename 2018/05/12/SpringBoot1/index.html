@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="创建一个RESTful Web Service  创建 RESTful Web Service这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。 你会学到什么？你将学会在本地1http://localhost:8080/greeting 创建一个可以接受 HTTP GET 请求的服务，并返回一个代表 greeting 对象的 JSON字符">
+<meta name="description" content="创建一个RESTful Web Service  这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。 你会学到什么？你将学会在本地1http://localhost:8080/greeting 创建一个可以接受 HTTP GET 请求的服务，并返回一个代表 greeting 对象的 JSON字符串:1&amp;#123;&quot;id&quot;:1,&quot;conte">
 <meta name="keywords" content="spring boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Boot 系列(第一篇）">
-<meta property="og:url" content="http://yoursite.com/2018/05/12/系列（第一篇）/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/05/12/SpringBoot1/index.html">
 <meta property="og:site_name" content="一万个飞">
-<meta property="og:description" content="创建一个RESTful Web Service  创建 RESTful Web Service这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。 你会学到什么？你将学会在本地1http://localhost:8080/greeting 创建一个可以接受 HTTP GET 请求的服务，并返回一个代表 greeting 对象的 JSON字符">
+<meta property="og:description" content="创建一个RESTful Web Service  这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。 你会学到什么？你将学会在本地1http://localhost:8080/greeting 创建一个可以接受 HTTP GET 请求的服务，并返回一个代表 greeting 对象的 JSON字符串:1&amp;#123;&quot;id&quot;:1,&quot;conte">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-12T15:22:11.592Z">
+<meta property="og:updated_time" content="2018-05-12T15:28:45.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Boot 系列(第一篇）">
-<meta name="twitter:description" content="创建一个RESTful Web Service  创建 RESTful Web Service这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。 你会学到什么？你将学会在本地1http://localhost:8080/greeting 创建一个可以接受 HTTP GET 请求的服务，并返回一个代表 greeting 对象的 JSON字符">
+<meta name="twitter:description" content="创建一个RESTful Web Service  这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。 你会学到什么？你将学会在本地1http://localhost:8080/greeting 创建一个可以接受 HTTP GET 请求的服务，并返回一个代表 greeting 对象的 JSON字符串:1&amp;#123;&quot;id&quot;:1,&quot;conte">
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/12/系列（第一篇）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/12/SpringBoot1/"/>
 
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/12/系列（第一篇）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/12/SpringBoot1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="贾宝飞">
@@ -374,7 +374,7 @@
       
         <h1 align="center">创建一个RESTful Web Service</h1>
 
-<h3 id="创建-RESTful-Web-Service"><a href="#创建-RESTful-Web-Service" class="headerlink" title="创建 RESTful Web Service"></a>创建 RESTful Web Service</h3><p>这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。</p>
+<p>这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。</p>
 <h3 id="你会学到什么？"><a href="#你会学到什么？" class="headerlink" title="你会学到什么？"></a>你会学到什么？</h3><p>你将学会在本地<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//localhost:8080/greeting</span></span><br></pre></td></tr></table></figure></p>
 <p>创建一个可以接受 HTTP GET 请求的服务，并返回一个代表 greeting 对象的 JSON字符串:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"id"</span>:<span class="number">1</span>,<span class="string">"content"</span>:<span class="string">"Hello, World!"</span>&#125;</span><br></pre></td></tr></table></figure></p>
 <p>并且可以在你的请求中自定义可选参数 ‘name’:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//localhost:8080/greeting?name=User</span></span><br></pre></td></tr></table></figure></p>
@@ -439,6 +439,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/12/SpringBoot2/" rel="next" title="Spring Boot 系列(第二篇）">
+                <i class="fa fa-chevron-left"></i> Spring Boot 系列(第二篇）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
@@ -512,7 +528,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -569,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">创建一个RESTful Web Service</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-RESTful-Web-Service"><span class="nav-number">1.0.1.</span> <span class="nav-text">创建 RESTful Web Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你会学到什么？"><span class="nav-number">1.0.2.</span> <span class="nav-text">你会学到什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你需要"><span class="nav-number">1.0.3.</span> <span class="nav-text">你需要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.0.4.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Greeting类"><span class="nav-number">1.0.5.</span> <span class="nav-text">创建Greeting类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建GreetingController类"><span class="nav-number">1.0.6.</span> <span class="nav-text">创建GreetingController类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译运行"><span class="nav-number">1.0.7.</span> <span class="nav-text">编译运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.0.8.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">创建一个RESTful Web Service</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#你会学到什么？"><span class="nav-number">1.0.1.</span> <span class="nav-text">你会学到什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你需要"><span class="nav-number">1.0.2.</span> <span class="nav-text">你需要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.0.3.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Greeting类"><span class="nav-number">1.0.4.</span> <span class="nav-text">创建Greeting类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建GreetingController类"><span class="nav-number">1.0.5.</span> <span class="nav-text">创建GreetingController类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译运行"><span class="nav-number">1.0.6.</span> <span class="nav-text">编译运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.0.7.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
