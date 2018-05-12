@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="spring boot," />
 
 
 
@@ -94,13 +94,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="一万个飞">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="创建一个RESTful Web Service  创建 RESTful Web Service这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。 你会学到什么？你将学会在本地1http://localhost:8080/greeting 创建一个可以接受 HTTP GET 请求的服务，并返回一个代表 greeting 对象的 JSON字符">
+<meta name="keywords" content="spring boot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot 系列(第一篇）">
+<meta property="og:url" content="http://yoursite.com/2018/05/12/系列（第一篇）/index.html">
 <meta property="og:site_name" content="一万个飞">
+<meta property="og:description" content="创建一个RESTful Web Service  创建 RESTful Web Service这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。 你会学到什么？你将学会在本地1http://localhost:8080/greeting 创建一个可以接受 HTTP GET 请求的服务，并返回一个代表 greeting 对象的 JSON字符">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-12T03:26:57.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一万个飞">
+<meta name="twitter:title" content="Spring Boot 系列(第一篇）">
+<meta name="twitter:description" content="创建一个RESTful Web Service  创建 RESTful Web Service这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。 你会学到什么？你将学会在本地1http://localhost:8080/greeting 创建一个可以接受 HTTP GET 请求的服务，并返回一个代表 greeting 对象的 JSON字符">
 
 
 
@@ -129,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/12/系列（第一篇）/"/>
 
 
 
 
 
-  <title>一万个飞</title>
+  <title>Spring Boot 系列(第一篇） | 一万个飞</title>
   
 
 
@@ -160,9 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -265,9 +268,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -297,9 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/12/系列（第一篇）/" itemprop="url">Spring Boot 系列(第一篇）</a></h1>
+          <h1 class="post-title" itemprop="name headline">Spring Boot 系列(第一篇）</h1>
         
 
         <div class="post-meta">
@@ -371,9 +372,7 @@
       
 
       
-        
-          
-            <h1 align="center">创建一个RESTful Web Service</h1>
+        <h1 align="center">创建一个RESTful Web Service</h1>
 
 <h3 id="创建-RESTful-Web-Service"><a href="#创建-RESTful-Web-Service" class="headerlink" title="创建 RESTful Web Service"></a>创建 RESTful Web Service</h3><p>这篇文章将带你用 Spring 创建一个 “Hello World” RESTful web service。</p>
 <h3 id="你会学到什么？"><a href="#你会学到什么？" class="headerlink" title="你会学到什么？"></a>你会学到什么？</h3><p>你将学会在本地<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//localhost:8080/greeting</span></span><br></pre></td></tr></table></figure></p>
@@ -400,8 +399,6 @@
 <p>创建GreetingController类：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">路径 src/main/java/hello/GreetingController.java</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicLong;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GreetingController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String template = <span class="string">"Hello, %s!"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> AtomicLong counter = <span class="keyword">new</span> AtomicLong();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/greeting"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Greeting <span class="title">greeting</span><span class="params">(@RequestParam(value=<span class="string">"name"</span>, defaultValue=<span class="string">"World"</span>)</span> String name) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Greeting(counter.incrementAndGet(),</span><br><span class="line">                            String.format(template, name));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -416,14 +413,20 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/spring-boot/" rel="tag"># spring boot</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -433,10 +436,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -444,6 +448,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -464,8 +472,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -527,6 +544,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">创建一个RESTful Web Service</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-RESTful-Web-Service"><span class="nav-number">1.0.1.</span> <span class="nav-text">创建 RESTful Web Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你会学到什么？"><span class="nav-number">1.0.2.</span> <span class="nav-text">你会学到什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你需要"><span class="nav-number">1.0.3.</span> <span class="nav-text">你需要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.0.4.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Greeting类"><span class="nav-number">1.0.5.</span> <span class="nav-text">创建Greeting类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建GreetingController类"><span class="nav-number">1.0.6.</span> <span class="nav-text">创建GreetingController类</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -647,10 +680,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
